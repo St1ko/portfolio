@@ -1,0 +1,80 @@
+export const docs = [
+  {
+    id: 1,
+    naam: "10 kritische vragen",
+    leerdoel: { SCO: "Oordeelsvorming" },
+    text: "blabla",
+  },
+  {
+    id: 2,
+    naam: "Nieuwsanalyse",
+    leerdoel: { SCO: "Oordeelsvorming" },
+    text: "blabla",
+  },
+  {
+    id: 3,
+    naam: "Enquete",
+    leerdoel: { UX: "Gebruikersonderzoek", SCO: "Oordeelsvorming" },
+    text: "blabla",
+  },
+  {
+    id: 4,
+    naam: "Empathy Map",
+    leerdoel: { SCO: "Communicatie" },
+    text: "blabla",
+  },
+  {
+    id: 5,
+    naam: "Customer Journey",
+    leerdoel: { SCO: "Communicatie", UX: "Gebruikersonderzoek" },
+    text: "",
+  },
+  {
+    id: 6,
+    naam: "Overtuiginstechnieken",
+    leerdoel: { SCO: "Oordeelsvorming" },
+    text: "",
+  },
+  {
+    id: 7,
+    naam: "Concept document V1",
+    leerdoel: { SCO: "Concept" },
+    text: "",
+  },
+  {
+    id: 8,
+    naam: "Project plan",
+    leerdoel: { SCO: "Oordeelsvorming" },
+    text: "",
+  },
+  {
+    id: 9,
+    naam: "Concept document V2",
+    leerdoel: { SCO: "Concept" },
+    text: "",
+  },
+  {
+    id: 10,
+    naam: "SWOT-analyse",
+    leerdoel: { SCO: "Concept" },
+    text: "",
+  },
+  {
+    id: 11,
+    naam: "Proof of Concept",
+    leerdoel: { SCO: "Concept" },
+    text: "",
+  },
+  {
+    id: 12,
+    naam: "Marketing plan",
+    leerdoel: { SCO: "Marketing" },
+    text: "",
+  },
+  {
+    id: 13,
+    naam: "Campagne designs",
+    leerdoel: { SCO: "Marketing", UX: "Design" },
+    text: "",
+  },
+];

@@ -1,34 +1,14 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-
-const RouteWithoutSubRoutes = route => {
-  return <Route path={route.path} render={() => <route.component />} />;
-};
-
-const RouteWithSubRoutes = route => {
-  return (
-    <Switch>
-      {renderRoutes(route.routes)}
-      <RouteWithoutSubRoutes {...route} />
-    </Switch>
-  );
-};
-
-const renderRoutes = routes => {
-  return routes.map((route, i) =>
-    route.routes ? (
-      <RouteWithSubRoutes key={i} {...route} />
-    ) : (
-      <RouteWithoutSubRoutes key={i} {...route} />
-    )
-  );
-};
+import { Switch, Route } from "react-router-dom";
+import Body from "components/body";
 
 const Router = ({ routes }) => {
   return (
-    <BrowserRouter>
-      <Switch>{renderRoutes(routes)}</Switch>
-    </BrowserRouter>
+    <Switch>
+      {routes.map((route, i) => (
+        <Route key={i} path={route.path} component={Body} />
+      ))}
+    </Switch>
   );
 };
 
