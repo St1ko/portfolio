@@ -15,7 +15,7 @@ const DocumentList = styled.ul`
 
   li {
     font-weight: 600;
-    padding: 5px 0;
+    padding: 8px 0;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -24,6 +24,7 @@ const DocumentList = styled.ul`
   li:before {
     content: "🖍";
     margin-right: 1rem;
+    font-size: 12px;
   }
 
   a {

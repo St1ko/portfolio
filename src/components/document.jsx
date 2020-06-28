@@ -7,6 +7,45 @@ const Container = styled.div`
   flex: 1;
   overflow-y: auto;
   color: #2e2e35;
+
+  ::-webkit-scrollbar {
+    background: none;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 4px solid #fff;
+  }
+
+  a {
+    font-weight: 600;
+    color: #6361bf;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  tr > :first-child {
+    border-right: 2px solid black;
+  }
+
+  tr th:not(:first-child) {
+    border-bottom: 2px solid black;
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 5px 10px;
+  }
 `;
 
 const Title = styled.h1`
@@ -37,6 +76,8 @@ const Tag = styled.span`
 
 const Image = styled.img`
   max-width: 100%;
+  margin-top: 40px;
+  object-fit: contain;
 `;
 
 const Document = ({ match, data }) => {
@@ -56,17 +97,23 @@ const Document = ({ match, data }) => {
           ))}
         </TagContainer>
         <H2>Aanleiding</H2>
-        <p>{doc.aanleiding}</p>
-        <p>
-          <em>{doc.onderzoeksvraag}</em>
-        </p>
+        <p dangerouslySetInnerHTML={{ __html: doc.aanleiding }} />
+        {doc.onderzoeksvraag && (
+          <p>
+            <em>{doc.onderzoeksvraag}</em>
+          </p>
+        )}
         <H2>Uitvoering</H2>
-        <p>{doc.uitvoering}</p>
-        <H2>Bevindingen</H2>
-        <p>{doc.bevindingen}</p>
+        <p dangerouslySetInnerHTML={{ __html: doc.uitvoering }} />
+        {doc.bevindingen && (
+          <React.Fragment>
+            <H2>Bevindingen</H2>
+            <p dangerouslySetInnerHTML={{ __html: doc.bevindingen }} />
+          </React.Fragment>
+        )}
         {doc.plaatjes &&
           doc.plaatjes.map((p) => (
-            <Image src={require(`images/${p}`)} alt="" />
+            <Image key={p} src={require(`assets/images/${p}`)} alt="" />
           ))}
       </React.Fragment>
     );
