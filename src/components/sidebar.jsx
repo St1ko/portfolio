@@ -9,13 +9,36 @@ const Container = styled.aside`
   border-radius: 10px 0 0 10px;
 `;
 
+const H1 = styled.h1`
+  font-size: 16px;
+  margin-bottom: 0;
+`;
+
+const H2 = styled.h1`
+  font-size: 14px;
+  font-weight: 400;
+  color: #4c515d;
+`;
+
+const StyledLink = styled.a`
+  float: right;
+  font-weight: 600;
+  color: #6361bf;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+`;
+
 const DocumentList = styled.ul`
   list-style-type: none;
   padding: 0;
 
   li {
     font-weight: 600;
-    padding: 8px 0;
+    padding: 7px 0;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -37,6 +60,7 @@ const DocumentList = styled.ul`
 const FiltersContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-top: 20px;
 `;
 
 const Filter = styled.div`
@@ -98,6 +122,11 @@ const Sidebar = ({ allDocuments }) => {
 
   return (
     <Container>
+      <H1>Stijn Albert</H1>
+      <StyledLink href="documents/leeswijzer.pdf" target="_blank">
+        Leeswijzer
+      </StyledLink>
+      <H2>Portfolio S6</H2>
       <FiltersContainer>
         {["SCO", "UX", "PO", "DEV"].map((category) => (
           <Filter
